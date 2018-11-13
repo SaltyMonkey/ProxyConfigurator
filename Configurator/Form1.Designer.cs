@@ -53,6 +53,7 @@
             this.CB_updatelog.TabIndex = 0;
             this.CB_updatelog.Text = "Show update log";
             this.CB_updatelog.UseVisualStyleBackColor = true;
+            this.CB_updatelog.CheckedChanged += new System.EventHandler(this.CB_updatelog_CheckedChanged);
             // 
             // B_apply
             // 

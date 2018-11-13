@@ -18,6 +18,7 @@ namespace Configurator
 
         private JsonSettings defaultSettings =
             new JsonSettings {region = "EU", updatelog = false};
+
         private string jsonPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\bin\config.json";
 
         public Form1()
@@ -32,7 +33,7 @@ namespace Configurator
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(jsonPath));
                     WriteData(jsonPath, defaultSettings);
-                    currentSettings = defaultSettings;
+                    syncObjects();
                 }
                 else
                 {
@@ -69,7 +70,8 @@ namespace Configurator
 
         private void RB_na_CheckedChanged(object sender, EventArgs e)
         {
-            currentSettings.region = "NA";
+            RadioButton rb = sender as RadioButton;
+            if(rb.Checked) currentSettings.region = "NA";
         }
 
         private void RB_eu_CheckedChanged(object sender, EventArgs e)
@@ -79,27 +81,31 @@ namespace Configurator
 
         private void RB_ru_CheckedChanged(object sender, EventArgs e)
         {
-            currentSettings.region = "RU";
+            var rb = sender as RadioButton;
+            if (rb.Checked) currentSettings.region = "RU";
         }
 
         private void RB_kr_CheckedChanged(object sender, EventArgs e)
         {
-            currentSettings.region = "KR";
+            var rb = sender as RadioButton;
+            if (rb.Checked) currentSettings.region = "KR";
         }
 
         private void RB_tw_CheckedChanged(object sender, EventArgs e)
         {
-            currentSettings.region = "TW";
+            var rb = sender as RadioButton;
+            if (rb.Checked) currentSettings.region = "TW";
         }
 
         private void RB_se_CheckedChanged(object sender, EventArgs e)
         {
-            currentSettings.region = "SE";
+            var rb = sender as RadioButton;
+            if (rb.Checked) currentSettings.region = "SE";
         }
 
         private void B_reset_Click(object sender, EventArgs e)
         {
-            currentSettings = defaultSettings;
+            syncObjects();
             FillUi();
         }
 
@@ -127,8 +133,20 @@ namespace Configurator
 
         private void B_apply_Click(object sender, EventArgs e)
         {
-            WriteData(jsonPath, defaultSettings);
+            WriteData(jsonPath, currentSettings);
             Application.Exit();
+        }
+
+        private void CB_updatelog_CheckedChanged(object sender, EventArgs e)
+        {
+            var cb = sender as CheckBox;
+            currentSettings.updatelog = cb.Checked;
+        }
+
+        private void syncObjects()
+        {
+            currentSettings.updatelog = defaultSettings.updatelog;
+            currentSettings.region = defaultSettings.region;
         }
     }
 }
