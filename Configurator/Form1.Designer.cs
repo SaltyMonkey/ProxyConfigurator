@@ -40,6 +40,7 @@
             this.RB_se = new System.Windows.Forms.RadioButton();
             this.B_reset = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.RB_jp = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             this.B_apply.Location = new System.Drawing.Point(160, 81);
             this.B_apply.Name = "B_apply";
-            this.B_apply.Size = new System.Drawing.Size(142, 47);
+            this.B_apply.Size = new System.Drawing.Size(142, 71);
             this.B_apply.TabIndex = 3;
             this.B_apply.Text = "Apply changes";
             this.B_apply.UseVisualStyleBackColor = true;
@@ -67,6 +68,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.RB_jp);
             this.groupBox1.Controls.Add(this.RB_se);
             this.groupBox1.Controls.Add(this.RB_tw);
             this.groupBox1.Controls.Add(this.RB_kr);
@@ -75,7 +77,7 @@
             this.groupBox1.Controls.Add(this.RB_na);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(142, 156);
+            this.groupBox1.Size = new System.Drawing.Size(142, 184);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Your publisher:";
@@ -143,10 +145,10 @@
             this.RB_tw.AutoSize = true;
             this.RB_tw.Location = new System.Drawing.Point(7, 112);
             this.RB_tw.Name = "RB_tw";
-            this.RB_tw.Size = new System.Drawing.Size(43, 17);
+            this.RB_tw.Size = new System.Drawing.Size(94, 17);
             this.RB_tw.TabIndex = 6;
             this.RB_tw.TabStop = true;
-            this.RB_tw.Text = "TW";
+            this.RB_tw.Text = "TW (Mangot5)";
             this.RB_tw.UseVisualStyleBackColor = true;
             this.RB_tw.CheckedChanged += new System.EventHandler(this.RB_tw_CheckedChanged);
             // 
@@ -155,18 +157,18 @@
             this.RB_se.AutoSize = true;
             this.RB_se.Location = new System.Drawing.Point(7, 135);
             this.RB_se.Name = "RB_se";
-            this.RB_se.Size = new System.Drawing.Size(39, 17);
+            this.RB_se.Size = new System.Drawing.Size(87, 17);
             this.RB_se.TabIndex = 7;
             this.RB_se.TabStop = true;
-            this.RB_se.Text = "SE";
+            this.RB_se.Text = "SE (Playwith)";
             this.RB_se.UseVisualStyleBackColor = true;
             this.RB_se.CheckedChanged += new System.EventHandler(this.RB_se_CheckedChanged);
             // 
             // B_reset
             // 
-            this.B_reset.Location = new System.Drawing.Point(160, 132);
+            this.B_reset.Location = new System.Drawing.Point(160, 158);
             this.B_reset.Name = "B_reset";
-            this.B_reset.Size = new System.Drawing.Size(142, 35);
+            this.B_reset.Size = new System.Drawing.Size(142, 38);
             this.B_reset.TabIndex = 6;
             this.B_reset.Text = "Reset to default";
             this.B_reset.UseVisualStyleBackColor = true;
@@ -176,17 +178,29 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(9, 171);
+            this.label1.Location = new System.Drawing.Point(9, 195);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Done by SaltyMonkey";
             // 
+            // RB_jp
+            // 
+            this.RB_jp.AutoSize = true;
+            this.RB_jp.Location = new System.Drawing.Point(7, 158);
+            this.RB_jp.Name = "RB_jp";
+            this.RB_jp.Size = new System.Drawing.Size(79, 17);
+            this.RB_jp.TabIndex = 8;
+            this.RB_jp.TabStop = true;
+            this.RB_jp.Text = "JP (Pmang)";
+            this.RB_jp.UseVisualStyleBackColor = true;
+            this.RB_jp.CheckedChanged += new System.EventHandler(this.RB_jp_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 186);
+            this.ClientSize = new System.Drawing.Size(313, 212);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.B_reset);
             this.Controls.Add(this.groupBox2);
@@ -219,6 +233,7 @@
         private System.Windows.Forms.RadioButton RB_se;
         private System.Windows.Forms.Button B_reset;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton RB_jp;
     }
 }
 

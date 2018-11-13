@@ -64,19 +64,22 @@ namespace Configurator
                     RB_tw.Checked = true; break;
                 case ("SE"):
                     RB_se.Checked = true; break;
+                case ("JP"):
+                    RB_jp.Checked = true; break;
             }
             CB_updatelog.Checked = currentSettings.updatelog;
         }
 
         private void RB_na_CheckedChanged(object sender, EventArgs e)
         {
-            RadioButton rb = sender as RadioButton;
+            var rb = sender as RadioButton;
             if(rb.Checked) currentSettings.region = "NA";
         }
 
         private void RB_eu_CheckedChanged(object sender, EventArgs e)
         {
-            currentSettings.region = "EU";
+            var rb = sender as RadioButton;
+            if (rb.Checked) currentSettings.region = "EU";
         }
 
         private void RB_ru_CheckedChanged(object sender, EventArgs e)
@@ -103,6 +106,11 @@ namespace Configurator
             if (rb.Checked) currentSettings.region = "SE";
         }
 
+        private void RB_jp_CheckedChanged(object sender, EventArgs e)
+        {
+            var rb = sender as RadioButton;
+            if (rb.Checked) currentSettings.region = "JP";
+        }
         private void B_reset_Click(object sender, EventArgs e)
         {
             syncObjects();
@@ -148,5 +156,7 @@ namespace Configurator
             currentSettings.updatelog = defaultSettings.updatelog;
             currentSettings.region = defaultSettings.region;
         }
+
+        
     }
 }
